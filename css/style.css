@@ -1,6 +1,10 @@
 /* **************************************VARIABLES */
-
-/* **************************************GLOBAL */
+:root {
+  --primary-clr: gray;
+  --secondary-clr: #000;
+  --opacity: 0.7;
+}
+/* **************************************GLOBAL STYLE */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&display=swap");
 
@@ -16,4 +20,70 @@ html {
 }
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--primary-clr);
+  color: var(--secondary-clr);
+}
+header {
+  width: min(80%, 120rem);
+  margin-inline: auto;
+  padding: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+}
+h1 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+}
+h2 {
+  font-size: clamp(2rem, 3vw, 3.2rem);
+}
+h3 {
+  font-size: clamp(1.8rem, 2vw, 3rem);
+}
+p {
+  opacity: var(--opacity);
+}
+img {
+  background-image: url(/img/eI9vHwA-black-and-white-city-wallpaper.jpg);
+  max-width: 100%;
+  margin-block: 1.5rem;
+}
+.grid_container {
+  width: min(80%, 120rem);
+  margin: 1rem auto;
+}
+.article_1 {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+  padding-block: 1rem;
+}
+.article_1 p {
+  font-size: clamp(1.5rem, 2vw, 2.2rem);
+}
+.article_2 p {
+  font-size: clamp(1.2rem, 1.8vw, 2rem);
+}
+h2 + p,
+h3 + p {
+  margin-top: 1rem;
+}
+footer {
+  width: min(80%, 120rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+  margin: 5rem auto;
+}
+
+/* **************************************RESPONSIVE */
+
+@media (min-width: 700px) {
+  .grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .article_1 {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
 }
